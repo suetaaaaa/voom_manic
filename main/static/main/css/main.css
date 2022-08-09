@@ -1,0 +1,242 @@
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: white;
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+.hr-washed {
+	margin: 50px 5vw;
+	padding: 0;
+	height: 0;
+	border: none;
+	box-shadow: 0 0 7px 1px rgb(0, 153, 0);
+}
+
+p {
+	margin: 0;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+}
+
+h3, h5 {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
+
+
+
+/* Navbar */
+.navbar-brand h3 {
+	margin: auto;
+	transition: all .1s ease;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-brand h3:active {
+		transform: scale(0.95, 0.95);
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.navbar-brand h3:hover {
+		transform: scale(0.95, 0.95);
+	}
+}
+
+.nav-link {
+	margin: 0;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+}
+
+.dropdown li .dropdown-item:active {
+	background-color: #2a2e33;
+}
+/* Navbar */
+
+
+
+/* Main photo */
+.container-fluid.main-photo {
+	margin: 0;
+	padding: 0;
+}
+
+.row.main-photo {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+
+.img-main-photo {
+	margin: 0;
+	padding: 0;
+}
+/* Main photo */
+
+
+
+/* About */
+.container-certificates img {
+	width: 200px;
+	padding: 10px;
+	transition: all .1s ease;
+}
+
+@media screen and (max-width: 575px) {
+	.container-certificates img {
+		width: 170px;
+		padding: 10px;
+		transition: all .1s ease;
+	}
+}
+
+a[data-fancybox] img {
+	cursor: zoom-in;
+}
+
+.container-certificates img:hover {
+	transform: scale(1.1);
+}
+/* About */
+
+
+
+/* Services */
+.card-services {
+	padding: 0;
+	margin: 8px;
+	box-shadow: 0px 0px 8px 1px rgba(24, 39, 51, 0.2);
+}
+
+.img-services {
+	max-width: 100%;
+}
+
+a {
+	display: contents;
+}
+
+.btn.btn-light {
+	box-shadow: 0px 0px 5px 1px rgb(106, 170, 106);
+	transition: all .1s ease;
+}
+
+@media screen and (max-width: 768px) {
+	.btn.btn-light:active {
+		transform: scale(0.95, 0.95);
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.btn.btn-light:hover {
+		transform: scale(0.95, 0.95);
+	}
+}
+/* Services */
+
+
+
+/* Portfolio */
+.row.portfolio {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.carousel {
+	box-shadow: 0px 0px 8px 5px rgba(24, 39, 51, 0.2);
+	border-radius: 5%;
+	overflow: hidden;
+}
+
+.carousel-item {
+	border-radius: 5%;
+}
+/* Portfolio */
+
+
+
+/* Contacts */
+.col-contacts {
+	width: 220px;
+	margin: auto;
+	padding: 0 !important;
+}
+
+.card-contacts-whatsapp {
+	width: 220px;
+	height: 220px;
+	margin: auto;
+	border-radius: 50%;
+	justify-content: center;
+	box-shadow: 0px 0px 8px 1px rgba(24, 39, 51, 0.2);
+	transition: all .1s ease;
+}
+
+@media screen and (max-width: 768px) {
+	.card-contacts-whatsapp:active {
+		transform: scale(0.9, 0.9);
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.card-contacts-whatsapp:hover {
+		transform: scale(0.9, 0.9);
+	}
+}
+
+.card-contacts-instagram {
+	width: 220px;
+	height: 220px;
+	margin: auto;
+	border-radius: 30%;
+	justify-content: center;
+	box-shadow: 0px 0px 8px 1px rgba(24, 39, 51, 0.2);
+	transition: all .1s ease;
+}
+
+@media screen and (max-width: 768px) {
+	.card-contacts-instagram:active {
+		transform: scale(0.9, 0.9);
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.card-contacts-instagram:hover {
+		transform: scale(0.9, 0.9);
+	}
+}
+
+.fa-brands.fa-whatsapp {
+	color: rgb(67, 216, 84);
+}
+
+.fa-brands.fa-instagram {
+	color: transparent;
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+	background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+.icon-contact {
+	padding: 20px;
+	font-size: 130px;
+	filter: drop-shadow(0px 0px 8px rgba(24, 39, 51, 0.2));
+}
+/* Contacts */
+
+
+
+

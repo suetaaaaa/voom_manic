@@ -1,0 +1,94 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="col-lg-6">
+
+	<div class="row my-4 justify-content-center">
+		<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
+					aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
+					aria-label="Slide 3"></button>
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3"
+					aria-label="Slide 4"></button>
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="4"
+					aria-label="Slide 5"></button>
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="5"
+					aria-label="Slide 6"></button>
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="6"
+					aria-label="Slide 7"></button>
+				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="7"
+					aria-label="Slide 8"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="{% static 'main/img/student_work_1.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'main/img/student_work_2.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'main/img/student_work_3.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'main/img/student_work_4.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'main/img/student_work_5.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'main/img/student_work_6.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'main/img/student_work_7.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'main/img/student_work_8.jpg' %}" class="d-block w-100" alt="...">
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<p style="color: white; padding-top: 10px; padding-bottom: 0px; font-style: italic;">Работы моих учеников</p>
+	</div>
+
+	<div class="row my-4 justify-content-center">
+		<p style="text-indent: 40px; text-align: justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam magnam inventore aspernatur quo explicabo! Ut
+			animi optio dolores, minima ipsum cum impedit, ullam earum dolore aliquam necessitatibus rerum, excepturi alias
+			enim sint dignissimos at! Debitis harum, amet perferendis praesentium iusto voluptate quibusdam aspernatur
+			sequi! Deleniti reiciendis quam facere maiores sapiente!</p>
+	</div>
+
+	<div class="row my-4 justify-content-center">
+		<a href="{% url 'training' %}">
+			<div class="card">
+				<p>Базовый курс по маникюру</p>
+			</div>
+		</a>
+		<a href="{% url 'home' %}">
+			<div class="card">
+				<p>Курс по наращиванию ногтей</p>
+			</div>
+		</a>
+	</div>
+
+</div>
+
+{% endblock %}

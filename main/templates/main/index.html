@@ -1,0 +1,225 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid main-photo mb-5">
+	<div class="row main-photo">
+		<img data-aos="fade-down" data-aos-duration="800" class="img-fluid img-main-photo"
+			src="{% static 'main/img/masha/main_photo1.jpg' %}" alt="">
+	</div>
+</div>
+
+<div class="container my-4">
+	<div class="row about my-4">
+		<div class="col">
+			<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+				class="row text-center">
+				<h3>НЕМНОГО О СЕБЕ</h3>
+			</div>
+			<div class="row row-cols-1 row-cols-md-2 my-2 g-4">
+				<div data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-4 col-md-12">
+					<div class="row text-center">
+						<h5>НАВЫКИ</h5>
+					</div>
+					<div class="row ps-4 justify-content-center align-items-center h-100">
+						<ul>
+							<li>
+								<p>Маникюр и дизайн любой сложности</p>
+							</li>
+							<li>
+								<p>Наращивание любой длины</p>
+							</li>
+							<li>
+								<p>Педикюр (не медицинский)</p>
+							</li>
+							<li>
+								<p>Ламинирование ресниц</p>
+							</li>
+							<li>
+								<p>Ламинирование, архитектура и окрашивание бровей</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-8 col-md-12">
+					<div class="row text-center">
+						<h5>СЕРТИФИКАТЫ</h5>
+					</div>
+					<div class="container-fluid container-certificates p-0 mt-4">
+						<div class="col-lg-10 text-center mx-auto">
+							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_1.jpg' %}"><img
+									src="{% static 'main/img/certificates/cert_1.jpg' %}" alt=""></a>
+							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_2.jpg' %}"><img
+									src="{% static 'main/img/certificates/cert_2.jpg' %}" alt=""></a>
+							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_3.jpg' %}"><img
+									src="{% static 'main/img/certificates/cert_3.jpg' %}" alt=""></a>
+							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_4.jpg' %}"><img
+									src="{% static 'main/img/certificates/cert_4.jpg' %}" alt=""></a>
+							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_5.jpg' %}"><img
+									src="{% static 'main/img/certificates/cert_5.jpg' %}" alt=""></a>
+							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_6.jpg' %}"><img
+									src="{% static 'main/img/certificates/cert_6.jpg' %}" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr class="hr-washed">
+
+<div class="container my-4">
+	<div class="row services my-4">
+		<div class="col">
+			<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+				class="row text-center">
+				<h3>ПРЕДОСТАВЛЯЕМЫЕ УСЛУГИ</h3>
+			</div>
+			<div class="row row-cols-1 row-cols-md-2 my-2 g-4">
+				<div class="col">
+					<div data-aos="flip-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+						class="card card-services h-100">
+						<img src="{% static 'main/img/services/random_studio.png' %}" class="card-img-top" alt="">
+						<div class="card-body">
+							<h5 class="card-title">СТУДИЯ VOOM.MANIC</h5>
+							<p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+								aliquam, nemo perspiciatis illo beatae aspernatur laborum obcaecati suscipit
+								repudiandae! Ipsa quia enim iusto repellat debitis.</p>
+							<div class="d-grid col-lg-6 col-md-12 mt-3 mb-0 mx-auto">
+								<a >
+									<button class="btn btn-light" type="button">
+										<p>Узнать прайс</p>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div data-aos="flip-left" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+						class="card card-services h-100">
+						<img src="{% static 'main/img/services/offline-training.jpg' %}" class="card-img-top" alt="">
+						<div class="card-body">
+							<h5 class="card-title">ОБУЧЕНИЕ ОФФЛАЙН</h5>
+							<p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+								aliquam, nemo perspiciatis illo beatae aspernatur laborum obcaecati suscipit
+								repudiandae! Ipsa quia enim iusto repellat debitis.</p>
+							<div class="d-grid col-lg-6 col-md-12 mt-3 mb-0 mx-auto">
+								<a href="{% url 'training' %}">
+									<button class="btn btn-light" type="button">
+										<p>Выбрать курс</p>
+									</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr class="hr-washed">
+
+<div class="container my-4">
+	<div class="row my-4 text-center justify-content-center">
+		<div class="col">
+			<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+				class="row text-center">
+				<h3>ПОРТФОЛИО</h3>
+			</div>
+			<div class="row row-cols-1 row-cols-md-2 my-4 g-4">
+				<div data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-6">
+					<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0"
+								class="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="{% static 'main/img/student_work/student_work_1.jpg' %}" class="d-block w-100"
+									alt="">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'main/img/student_work/student_work_2.jpg' %}" class="d-block w-100"
+									alt="">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'main/img/student_work/student_work_3.jpg' %}" class="d-block w-100"
+									alt="">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Предыдущий</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Следующий</span>
+						</button>
+					</div>
+				</div>
+				<div data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-6">
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat rerum ad quae, tempore
+						consectetur sit
+						excepturi, quaerat ipsam iure magni similique hic facilis quo cupiditate praesentium. Excepturi
+						doloribus a ducimus.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr class="hr-washed">
+
+<div class="container my-4">
+	<div class="row my-4 text-center justify-content-center">
+		<div class="col">
+			<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+				class="row text-center">
+				<h3>СВЯЗАТЬСЯ СО МНОЙ</h3>
+			</div>
+			<div class="row justify-content-center mt-4">
+				<div data-aos="flip-down" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-6 col-contacts my-4 px-5">
+					<div class="card card-contacts-whatsapp">
+						<a href="https://wa.me/79773009217"><i class="fa-brands fa-whatsapp icon-contact"></i></a>
+					</div>
+				</div>
+				<div data-aos="flip-down" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-6 col-contacts my-4 px-5">
+					<div class="card card-contacts-instagram">
+						<a href="https://api.instagram.com/voom.manic/"><i
+								class="fa-brands fa-instagram icon-contact"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+	AOS.init();
+</script>
+
+{% endblock %}
