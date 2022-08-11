@@ -65,11 +65,18 @@
 						</ul>
 					</li>
 				</ul>
-				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'login' %}"><i class="fa-regular fa-user"></i></a>
-					</li>
-				</ul>
+				
+				{% if request.user.is_authenticated %}
+					<ul class="navbar-nav ms-auto mb-2 mb-md-0">
+						<p style="color: white;">Привет, {{ request.user.username }}!</p>
+					</ul>
+				{% else %}
+					<ul class="navbar-nav ms-auto mb-2 mb-md-0">
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'login' %}"><i class="fa-regular fa-user"></i></a>
+						</li>
+					</ul>
+				{% endif %}
 			</div>
 		</div>
 	</nav>
