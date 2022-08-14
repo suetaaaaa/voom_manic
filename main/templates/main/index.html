@@ -11,8 +11,10 @@
 
 <div class="container-fluid main-photo mb-5">
 	<div class="row main-photo">
+		{% for photo in main_photo_list %}
 		<img data-aos="fade-down" data-aos-duration="800" class="img-fluid img-main-photo"
-			src="{% static 'main/img/masha/main_photo1.jpg' %}" alt="">
+			src="{{ photo.main_photo.url }}" alt="">
+		{% endfor %}
 	</div>
 </div>
 
@@ -46,18 +48,10 @@
 					</div>
 					<div class="container-fluid container-certificates p-0 mt-4">
 						<div class="col-lg-10 text-center mx-auto">
-							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_1.jpg' %}"><img
-									src="{% static 'main/img/certificates/cert_1.jpg' %}" alt=""></a>
-							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_2.jpg' %}"><img
-									src="{% static 'main/img/certificates/cert_2.jpg' %}" alt=""></a>
-							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_3.jpg' %}"><img
-									src="{% static 'main/img/certificates/cert_3.jpg' %}" alt=""></a>
-							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_4.jpg' %}"><img
-									src="{% static 'main/img/certificates/cert_4.jpg' %}" alt=""></a>
-							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_5.jpg' %}"><img
-									src="{% static 'main/img/certificates/cert_5.jpg' %}" alt=""></a>
-							<a data-fancybox="gallery" href="{% static 'main/img/certificates/cert_6.jpg' %}"><img
-									src="{% static 'main/img/certificates/cert_6.jpg' %}" alt=""></a>
+							{% for cert in cert_images_list %}
+							<a data-fancybox="gallery" href="{{ cert.cert_image.url }}"><img
+									src="{{ cert.cert_image.url }}" alt=""></a>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
@@ -75,45 +69,26 @@
 				class="row text-center">
 				<h3>ПРЕДОСТАВЛЯЕМЫЕ УСЛУГИ</h3>
 			</div>
-			<div class="row row-cols-1 row-cols-md-2 my-2 g-4">
+			<div data-aos="flip-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+				class="row row-cols-1 row-cols-md-2 my-2 g-4">
+				{% for service in services_list %}
 				<div class="col">
-					<div data-aos="flip-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
-						class="card card-services h-100">
-						<img src="{% static 'main/img/services/random_studio.png' %}" class="card-img-top" alt="">
+					<div class="card card-services h-100">
+						<img src="{{ service.service_image.url }}" class="card-img-top" alt="">
 						<div class="card-body">
-							<h5 class="card-title">СТУДИЯ VOOM.MANIC</h5>
-							<p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-								aliquam, nemo perspiciatis illo beatae aspernatur laborum obcaecati suscipit
-								repudiandae! Ipsa quia enim iusto repellat debitis.</p>
-							<div class="d-grid col-lg-6 col-md-12 mt-3 mb-0 mx-auto">
-								<a>
-									<button class="btn btn-light" type="button">
-										<p>Узнать прайс</p>
-									</button>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div data-aos="flip-left" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
-						class="card card-services h-100">
-						<img src="{% static 'main/img/services/offline-training.jpg' %}" class="card-img-top" alt="">
-						<div class="card-body">
-							<h5 class="card-title">ОБУЧЕНИЕ ОФФЛАЙН</h5>
-							<p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-								aliquam, nemo perspiciatis illo beatae aspernatur laborum obcaecati suscipit
-								repudiandae! Ipsa quia enim iusto repellat debitis.</p>
+							<h5 class="card-title">{{ service.title }}</h5>
+							<p class="card-text">{{ service.text }}</p>
 							<div class="d-grid col-lg-6 col-md-12 mt-3 mb-0 mx-auto">
 								<a href="{% url 'training' %}">
 									<button class="btn btn-light" type="button">
-										<p>Выбрать курс</p>
+										<p>{{ service.button_text }}</p>
 									</button>
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
@@ -168,10 +143,7 @@
 				</div>
 				<div data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
 					class="col-lg-6">
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat rerum ad quae, tempore
-						consectetur sit
-						excepturi, quaerat ipsam iure magni similique hic facilis quo cupiditate praesentium. Excepturi
-						doloribus a ducimus.</p>
+					<p>{% for text in portfolio_text_list %} {{ text.text }} {% endfor %}</p>
 				</div>
 			</div>
 		</div>
