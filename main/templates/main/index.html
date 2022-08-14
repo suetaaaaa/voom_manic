@@ -31,21 +31,11 @@
 					</div>
 					<div class="row ps-4 justify-content-center align-items-center h-100">
 						<ul>
+							{% for another_skill in skills_list %}
 							<li>
-								<p>Маникюр и дизайн любой сложности</p>
+								<p>{{ another_skill.skill }}</p>
 							</li>
-							<li>
-								<p>Наращивание любой длины</p>
-							</li>
-							<li>
-								<p>Педикюр (не медицинский)</p>
-							</li>
-							<li>
-								<p>Ламинирование ресниц</p>
-							</li>
-							<li>
-								<p>Ламинирование, архитектура и окрашивание бровей</p>
-							</li>
+							{% endfor %}
 						</ul>
 					</div>
 				</div>
@@ -96,7 +86,7 @@
 								aliquam, nemo perspiciatis illo beatae aspernatur laborum obcaecati suscipit
 								repudiandae! Ipsa quia enim iusto repellat debitis.</p>
 							<div class="d-grid col-lg-6 col-md-12 mt-3 mb-0 mx-auto">
-								<a >
+								<a>
 									<button class="btn btn-light" type="button">
 										<p>Узнать прайс</p>
 									</button>
