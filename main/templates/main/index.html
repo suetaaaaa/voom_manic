@@ -69,11 +69,11 @@
 				class="row text-center">
 				<h3>ПРЕДОСТАВЛЯЕМЫЕ УСЛУГИ</h3>
 			</div>
-			<div data-aos="flip-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+			<div 
 				class="row row-cols-1 row-cols-md-2 my-2 g-4">
 				{% for service in services_list %}
 				<div class="col">
-					<div class="card card-services h-100">
+					<div data-aos="{% cycle 'flip-right' 'flip-left' %}" data-aos-anchor-placement="top-bottom" data-aos-duration="800" class="card card-services h-100">
 						<img src="{{ service.service_image.url }}" class="card-img-top" alt="">
 						<div class="card-body">
 							<h5 class="card-title">{{ service.title }}</h5>
@@ -108,26 +108,18 @@
 					class="col-lg-6">
 					<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
 						<div class="carousel-indicators">
-							<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0"
-								class="active" aria-current="true" aria-label="Slide 1"></button>
-							<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
-								aria-label="Slide 2"></button>
-							<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
-								aria-label="Slide 3"></button>
+							{% for image in portfolio_images_list %}
+							<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="{{ forloop.counter0 }}"
+								class="{% if forloop.counter0 == 0 %} active {% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+							{% endfor %}
 						</div>
 						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img src="{% static 'main/img/student_work/student_work_1.jpg' %}" class="d-block w-100"
+							{% for image in portfolio_images_list %}
+							<div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+								<img src="{{ image.portfolio_photo.url }}" class="d-block w-100"
 									alt="">
 							</div>
-							<div class="carousel-item">
-								<img src="{% static 'main/img/student_work/student_work_2.jpg' %}" class="d-block w-100"
-									alt="">
-							</div>
-							<div class="carousel-item">
-								<img src="{% static 'main/img/student_work/student_work_3.jpg' %}" class="d-block w-100"
-									alt="">
-							</div>
+							{% endfor %}
 						</div>
 						<button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
 							data-bs-slide="prev">
