@@ -1,9 +1,11 @@
-{% extends 'main/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
+
 
 {% block title %}
 {{ title }}
 {% endblock %}
+
 
 {% block content %}
 
@@ -77,12 +79,12 @@
 	</div>
 
 	<div class="row my-4 justify-content-center">
-		<a href="{% url 'training' %}">
+		<a href="{% url 'manicure_basic_course' %}">
 			<div class="card">
 				<p>Базовый курс по маникюру</p>
 			</div>
 		</a>
-		<a href="{% url 'home' %}">
+		<a href="{% url 'nail_extension_course' %}">
 			<div class="card">
 				<p>Курс по наращиванию ногтей</p>
 			</div>

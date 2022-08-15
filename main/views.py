@@ -4,7 +4,6 @@ from main.models import Skills, CertImages, MainPhoto, Services, PortfolioImages
 
 
 def index(request):
-
 	skills_list = Skills.objects.all()
 	cert_images_list = CertImages.objects.all()
 	main_photo_list = MainPhoto.objects.all()
@@ -26,9 +25,32 @@ def index(request):
 
 
 def training(request):
-
 	data_training = {
 		'title': 'Обучение оффлайн'
 	}
 
 	return render(request, 'main/training.html', data_training)
+
+
+def studio(request):
+	data_studio = {
+		'title': 'Студия VOOM.MANIC'
+	}
+
+	return render(request, 'main/studio.html', data_studio)
+
+
+def manicure_basic_course(request):
+	data_manicure_basic_course = {
+		'title': 'Базовый курс по маникюру'
+	}
+
+	return render(request, 'main/manicure_basic_course.html', data_manicure_basic_course)
+
+
+def nail_extension_course(request):
+	data_nail_extension_course = {
+		'title': 'Курс по наращиванию ногтей'
+	}
+
+	return render(request, 'main/nail_extension_course.html', data_nail_extension_course)

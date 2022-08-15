@@ -45,37 +45,46 @@
 			<div class="collapse navbar-collapse ms-3 me-3" id="navbarNavDarkDropdown">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+						<a class="nav-link {% if request.path == '/' %} active {% endif %}" aria-current="page"
+							href="{% url 'home' %}">
 							Главная
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">
+						<a class="nav-link {% if request.path == '/studio' %} active {% endif %}"
+							href="{% url 'studio' %}">
 							Студия
 						</a>
 					</li>
+					{% with request.resolver_match.url_name as url_name %}
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="{% url 'training' %}" id="navbarDarkDropdownMenuLink" role="button"
+						<a class="nav-link dropdown-toggle {% if url_name == 'training' or url_name == 'manicure_basic_course' or url_name == 'nail_extension_course' %} active {% endif %}"
+							href="{% url 'training' %}" id="navbarDarkDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
 							Обучение
 						</a>
 						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item" href="{% url 'training' %}"><p style="font-size: medium;">Базовый курс по маникюру</p></a></li>
-							<li><a class="dropdown-item" href="{% url 'training' %}"><p style="font-size: medium;">Курс по наращиванию ногтей</p></a></li>
+							<li><a class="dropdown-item" href="{% url 'manicure_basic_course' %}">
+									<p style="font-size: medium;">Базовый курс по маникюру</p>
+								</a></li>
+							<li><a class="dropdown-item" href="{% url 'nail_extension_course' %}">
+									<p style="font-size: medium;">Курс по наращиванию ногтей</p>
+								</a></li>
 						</ul>
 					</li>
+					{% endwith %}
 				</ul>
-				
+
 				{% if request.user.is_authenticated %}
-					<ul class="navbar-nav ms-auto mb-2 mb-md-0">
-						<p style="color: white;">Привет, {{ request.user.username }}!</p>
-					</ul>
+				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
+					<p style="color: white;">Привет, {{ request.user.username }}!</p>
+				</ul>
 				{% else %}
-					<ul class="navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="{% url 'login' %}"><i class="fa-regular fa-user"></i></a>
-						</li>
-					</ul>
+				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'login' %}"><i class="fa-regular fa-user"></i></a>
+					</li>
+				</ul>
 				{% endif %}
 			</div>
 		</div>
