@@ -79,7 +79,7 @@
 							<h5 class="card-title">{{ service.title }}</h5>
 							<p class="card-text">{{ service.text }}</p>
 							<div class="d-grid col-lg-6 col-md-12 mt-3 mb-0 mx-auto">
-								<a href="{% url 'training' %}">
+								<a href="{{ service.slug }}">
 									<button class="btn btn-light" type="button">
 										<p>{{ service.button_text }}</p>
 									</button>
@@ -135,7 +135,7 @@
 				</div>
 				<div data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
 					class="col-lg-6">
-					<p>{% for text in portfolio_text_list %} {{ text.text }} {% endfor %}</p>
+					<p style="white-space: pre-wrap">{% for text in portfolio_text_list %} {{ text.text|safe }} {% endfor %}</p>
 				</div>
 			</div>
 		</div>

@@ -41,6 +41,7 @@ class Services(models.Model):
 	title = models.CharField(max_length=255, default='')
 	text = models.TextField(default='')
 	button_text = models.CharField(max_length=50, default='')
+	slug = models.SlugField(max_length=100, default='')
 	service_image = models.ImageField(upload_to='main/services/')
 
 	class Meta:
