@@ -64,7 +64,7 @@
 							Обучение
 						</a>
 						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							{% for course in courses %}
+							{% for course in nav_courses %}
 							<li><a class="dropdown-item" href="{{ course.get_absolute_url }}">
 									<p style="font-size: medium;">{{ course.title }}</p>
 								</a></li>
