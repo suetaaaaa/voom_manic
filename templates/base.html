@@ -59,13 +59,13 @@
 					{% with request.resolver_match.url_name as url_name %}
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle {% if url_name == 'training' or url_name == 'manicure_basic_course' or url_name == 'nail_extension_course' %} active {% endif %}"
-							href="{% url 'training' %}" id="navbarDarkDropdownMenuLink" role="button"
+							href="" id="navbarDarkDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
 							Обучение
 						</a>
 						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 							{% for course in training_courses_list %}
-							<li><a class="dropdown-item" href="{{ request.path }}/{{ course.slug }}">
+							<li><a class="dropdown-item" href="{{ request.path }}{{ course.slug }}">
 									<p style="font-size: medium;">{{ course.title }}</p>
 								</a></li>
 							{% endfor %}

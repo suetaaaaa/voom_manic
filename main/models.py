@@ -107,7 +107,7 @@ class TrainingText(models.Model):
 class TrainingCourses(models.Model):
 	title = models.CharField(max_length=255, default='')
 	text = models.TextField()
-	slug = models.SlugField(max_length=100, default='')
+	slug = models.SlugField(max_length=100, null=False, unique=True)
 	
 	class Meta:
 		verbose_name = 'Курс'
@@ -115,6 +115,9 @@ class TrainingCourses(models.Model):
 	
 	def __str__(self):
 		return self.title
+	
+	def get_absolute_url(self):
+		return reverse('course_detail', kwargs={'slug': self.slug})
 
 
 # training.html

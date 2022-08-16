@@ -1,6 +1,17 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
 from main.models import Skills, CertImages, MainPhoto, Services, PortfolioImages, PortfolioText, TrainingCourses, TrainingStudentWork, TrainingText
+
+
+class CoursesListView(ListView):
+	model = TrainingCourses
+	template_name = 'main/training_list.html'
+
+
+class CoursesDetailView(DetailView):
+	model = TrainingCourses
+	template_name = 'main/course_detail.html'
 
 
 def index(request):
@@ -36,7 +47,7 @@ def training(request):
 		'training_courses_list': training_courses_list
 	}
 
-	return render(request, 'main/training.html', data_training)
+	return render(request, 'main/training_list.html', data_training)
 
 
 def studio(request):
