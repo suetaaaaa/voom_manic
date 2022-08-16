@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 
 
+# main.html
+
 class MainPhoto(models.Model):
 	main_photo_title = 'Фото на главной странице'
 	main_photo = models.ImageField(upload_to='main/main_photo/')
@@ -73,3 +75,46 @@ class PortfolioText(models.Model):
 	
 	def __str__(self):
 		return self.text
+
+# main.html
+
+
+# training.html
+
+class TrainingStudentWork(models.Model):
+	title = 'Фото работ учеников'
+	student_work_photo = models.ImageField(upload_to='training/student_work_photo/')
+
+	class Meta:
+		verbose_name = 'Фото работ учеников'
+		verbose_name_plural = 'Фото работ учеников'
+	
+	def __str__(self):
+		return self.title
+
+
+class TrainingText(models.Model):
+	text = models.TextField()
+
+	class Meta:
+		verbose_name = 'Текст для страницы обучения'
+		verbose_name_plural = 'Текст для страницы обучения'
+	
+	def __str__(self):
+		return self.text
+
+
+class TrainingCourses(models.Model):
+	title = models.CharField(max_length=255, default='')
+	text = models.TextField()
+	slug = models.SlugField(max_length=100, default='')
+	
+	class Meta:
+		verbose_name = 'Курс'
+		verbose_name_plural = 'Курсы'
+	
+	def __str__(self):
+		return self.title
+
+
+# training.html

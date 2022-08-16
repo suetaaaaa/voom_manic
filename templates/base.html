@@ -64,12 +64,11 @@
 							Обучение
 						</a>
 						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item" href="{% url 'manicure_basic_course' %}">
-									<p style="font-size: medium;">Базовый курс по маникюру</p>
+							{% for course in training_courses_list %}
+							<li><a class="dropdown-item" href="{{ request.path }}/{{ course.slug }}">
+									<p style="font-size: medium;">{{ course.title }}</p>
 								</a></li>
-							<li><a class="dropdown-item" href="{% url 'nail_extension_course' %}">
-									<p style="font-size: medium;">Курс по наращиванию ногтей</p>
-								</a></li>
+							{% endfor %}
 						</ul>
 					</li>
 					{% endwith %}

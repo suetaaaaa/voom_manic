@@ -13,3 +13,7 @@ admin.site.register(models.CertImages)
 admin.site.register(models.MainPhoto)
 admin.site.register(models.PortfolioImages)
 admin.site.register(models.PortfolioText)
+
+admin.site.register(models.TrainingStudentWork)
+admin.site.register(models.TrainingText)
+admin.site.register(models.TrainingCourses)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from main.models import Skills, CertImages, MainPhoto, Services, PortfolioImages, PortfolioText
+from main.models import Skills, CertImages, MainPhoto, Services, PortfolioImages, PortfolioText, TrainingCourses, TrainingStudentWork, TrainingText
 
 
 def index(request):
@@ -25,8 +25,15 @@ def index(request):
 
 
 def training(request):
+	student_work_photo_list = TrainingStudentWork.objects.all()
+	training_text_list = TrainingText.objects.all()
+	training_courses_list = TrainingCourses.objects.all()
+
 	data_training = {
-		'title': 'Обучение оффлайн'
+		'title': 'Обучение оффлайн',
+		'student_work_photo_list': student_work_photo_list,
+		'training_text_list': training_text_list,
+		'training_courses_list': training_courses_list
 	}
 
 	return render(request, 'main/training.html', data_training)

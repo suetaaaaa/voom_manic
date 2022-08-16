@@ -9,88 +9,70 @@
 
 {% block content %}
 
-<div class="col-lg-6">
-
-	<div class="row my-4 justify-content-center">
-		<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"
-					aria-current="true" aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
-					aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
-					aria-label="Slide 3"></button>
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3"
-					aria-label="Slide 4"></button>
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="4"
-					aria-label="Slide 5"></button>
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="5"
-					aria-label="Slide 6"></button>
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="6"
-					aria-label="Slide 7"></button>
-				<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="7"
-					aria-label="Slide 8"></button>
+<div class="container my-4">
+	<div class="row my-4 text-center justify-content-center">
+		<div class="col">
+			<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+				class="row text-center">
+				<h3>ОБУЧЕНИЕ ОФФЛАЙН</h3>
 			</div>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="{% static 'main/img/student_work_1.jpg' %}" class="d-block w-100" alt="...">
+			<div class="row row-cols-1 row-cols-md-2 my-4 g-4">
+				<div data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-6">
+					<div class="wrapper">
+						<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+								{% for photo in student_work_photo_list %}
+								<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="{{ forloop.counter0 }}"
+									class="{% if forloop.counter0 == 0 %} active {% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+								{% endfor %}
+							</div>
+							<div class="carousel-inner">
+								{% for photo in student_work_photo_list %}
+								<div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+									<img src="{{ photo.student_work_photo.url }}" class="d-block w-100"
+										alt="">
+								</div>
+								{% endfor %}
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
+								data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Предыдущий</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
+								data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Следующий</span>
+							</button>
+						</div>
+					</div>
 				</div>
-				<div class="carousel-item">
-					<img src="{% static 'main/img/student_work_2.jpg' %}" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="{% static 'main/img/student_work_3.jpg' %}" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="{% static 'main/img/student_work_4.jpg' %}" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="{% static 'main/img/student_work_5.jpg' %}" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="{% static 'main/img/student_work_6.jpg' %}" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="{% static 'main/img/student_work_7.jpg' %}" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="{% static 'main/img/student_work_8.jpg' %}" class="d-block w-100" alt="...">
+				<div data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
+					class="col-lg-6">
+					<p style="white-space: pre-wrap">{% for text in training_text_list %} {{ text.text|safe }} {% endfor %}</p>
 				</div>
 			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
-				data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
-				data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
 		</div>
-		<p style="color: white; padding-top: 10px; padding-bottom: 0px; font-style: italic;">Работы моих учеников</p>
 	</div>
-
-	<div class="row my-4 justify-content-center">
-		<p style="text-indent: 40px; text-align: justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam magnam inventore aspernatur quo explicabo! Ut
-			animi optio dolores, minima ipsum cum impedit, ullam earum dolore aliquam necessitatibus rerum, excepturi alias
-			enim sint dignissimos at! Debitis harum, amet perferendis praesentium iusto voluptate quibusdam aspernatur
-			sequi! Deleniti reiciendis quam facere maiores sapiente!</p>
-	</div>
-
-	<div class="row my-4 justify-content-center">
-		<a href="{% url 'manicure_basic_course' %}">
-			<div class="card">
-				<p>Базовый курс по маникюру</p>
-			</div>
-		</a>
-		<a href="{% url 'nail_extension_course' %}">
-			<div class="card">
-				<p>Курс по наращиванию ногтей</p>
-			</div>
-		</a>
-	</div>
-
 </div>
+
+<div class="row my-4 justify-content-center">
+	<div class="d-grid col-lg-6 col-md-12 my-3">
+		{% for course in training_courses_list %}
+		<a href="{{ request.path }}/{{ course.slug }}">
+			<button class="btn btn-light" type="button">
+				<p>{{ course.title }}</p>
+			</button>
+		</a>
+		{% endfor %}
+	</div>
+</div>
+
+
+
+<script>
+	AOS.init();
+</script>
 
 {% endblock %}
