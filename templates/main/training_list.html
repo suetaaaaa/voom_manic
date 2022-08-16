@@ -3,7 +3,7 @@
 
 
 {% block title %}
-{{ title }}
+ОБУЧЕНИЕ ОФФЛАЙН
 {% endblock %}
 
 
@@ -22,13 +22,13 @@
 					<div class="wrapper">
 						<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
 							<div class="carousel-indicators">
-								{% for photo in student_work_photo_list %}
+								{% for photo in photos %}
 								<button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="{{ forloop.counter0 }}"
 									class="{% if forloop.counter0 == 0 %} active {% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
 								{% endfor %}
 							</div>
 							<div class="carousel-inner">
-								{% for photo in student_work_photo_list %}
+								{% for photo in photos %}
 								<div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
 									<img src="{{ photo.student_work_photo.url }}" class="d-block w-100"
 										alt="">
@@ -50,7 +50,7 @@
 				</div>
 				<div data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800"
 					class="col-lg-6">
-					<p style="white-space: pre-wrap">{% for text in training_text_list %} {{ text.text|safe }} {% endfor %}</p>
+					<p style="white-space: pre-wrap">{% for text in texts %} {{ text.text|safe }} {% endfor %}</p>
 				</div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@
 
 <div class="row my-4 justify-content-center">
 	<div class="d-grid col-lg-6 col-md-12 my-3">
-		{% for course in object_list %}
+		{% for course in courses %}
 		<a href="{{ course.get_absolute_url }}">
 			<button class="btn btn-light" type="button">
 				<p>{{ course.title }}</p>

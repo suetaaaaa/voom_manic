@@ -7,11 +7,20 @@ from main.models import Skills, CertImages, MainPhoto, Services, PortfolioImages
 class CoursesListView(ListView):
 	model = TrainingCourses
 	template_name = 'main/training_list.html'
+	context_object_name = 'courses'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['photos'] = TrainingStudentWork.objects.all()
+		context['texts'] = TrainingText.objects.all()
+		
+		return context
 
 
 class CoursesDetailView(DetailView):
 	model = TrainingCourses
 	template_name = 'main/course_detail.html'
+	context_object_name = 'course'
 
 
 def index(request):
@@ -35,19 +44,19 @@ def index(request):
 	return render(request, 'main/index.html', data_index)
 
 
-def training(request):
-	student_work_photo_list = TrainingStudentWork.objects.all()
-	training_text_list = TrainingText.objects.all()
-	training_courses_list = TrainingCourses.objects.all()
+# def training(request):
+# 	student_work_photo_list = TrainingStudentWork.objects.all()
+# 	training_text_list = TrainingText.objects.all()
+# 	training_courses_list = TrainingCourses.objects.all()
 
-	data_training = {
-		'title': 'Обучение оффлайн',
-		'student_work_photo_list': student_work_photo_list,
-		'training_text_list': training_text_list,
-		'training_courses_list': training_courses_list
-	}
+# 	data_training = {
+# 		'title': 'Обучение оффлайн',
+# 		'student_work_photo_list': student_work_photo_list,
+# 		'training_text_list': training_text_list,
+# 		'training_courses_list': training_courses_list
+# 	}
 
-	return render(request, 'main/training_list.html', data_training)
+# 	return render(request, 'main/training_list.html', data_training)
 
 
 def studio(request):
